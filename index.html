@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>On-Device Triage</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main>
+  <header>
+    <h1>On-Device Triage</h1>
+    <p class="sub">Incident triage that runs on the machine by default and only escalates to the cloud when it has to.</p>
+  </header>
+
+  <section class="controls">
+    <label for="mode">Inference routing</label>
+    <select id="mode">
+      <option value="hybrid" selected>Hybrid — on-device first, cloud fallback</option>
+      <option value="local">On-device only</option>
+      <option value="cloud">Cloud only</option>
+    </select>
+    <span id="device" class="chip">checking device model…</span>
+  </section>
+
+  <section class="input">
+    <label for="incident">Incident text or log excerpt</label>
+    <textarea id="incident" rows="9" spellcheck="false"></textarea>
+    <div class="row">
+      <button id="run">Triage</button>
+      <button id="sample" class="ghost">Load sample</button>
+      <span id="status" class="status"></span>
+    </div>
+  </section>
+
+  <section id="result" class="result" hidden>
+    <div class="badges">
+      <span id="path" class="chip">—</span>
+      <span id="latency" class="chip">—</span>
+      <span id="egress" class="chip">—</span>
+    </div>
+    <pre id="output"></pre>
+  </section>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
