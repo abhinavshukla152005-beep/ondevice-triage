@@ -6,6 +6,12 @@ falls back to the cloud when the device model cannot serve the request.
 Built for the **#BuildHybridAI** hackathon track: Firebase AI Logic with hybrid
 inference (on-device Gemini Nano in Chrome, cloud Gemini as the fallback).
 
+Live page: <https://abhinavshukla152005-beep.github.io/ondevice-triage/> — it needs
+the Chrome flags and an App Check debug token described below before the on-device
+path can run.
+
+![On-device run](ondevice-run.png)
+
 ## How the routing works
 
 `getGenerativeModel(ai, { mode })` takes one of three Firebase AI Logic inference
